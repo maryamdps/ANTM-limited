@@ -1,0 +1,4 @@
+import { Link } from 'react-router';
+import { ArrowUpRight } from 'lucide-react';
+import { divisions } from '@/data/divisions';
+export function Sectors() { return <section className="sectors" id="divisions"><div className="section-heading"><div><span className="eyebrow">FIVE DIVISIONS. ONE TRUSTED PARTNER.</span><h2>Specialist sectors.<br/><em>Connected expertise.</em></h2></div><p>Focused sourcing knowledge.<br/>A single point of coordination.</p></div><div className="sector-grid">{divisions.map((d,i) => <Link className="sector-card" to={'/divisions/'+d.slug} key={d.slug}><img src={d.image} width="896" height="1216" loading="lazy" alt={d.title+' sourcing'}/><div className="sector-overlay"/><span className="sector-number">0{i+1}</span><div className="sector-copy"><h3>{d.title}</h3><p>{d.summary}</p><span>Explore division <ArrowUpRight size={17}/></span></div></Link>)}</div></section>; }
